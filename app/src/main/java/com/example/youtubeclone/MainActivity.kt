@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val retrofit = Retrofit.Builder().baseUrl("http://mellowcode.org/")
-            .addConverterFactory(GsonConverterFasctory.create())
+            .addConverterFactory(GsonConverterFactory.create())
             .build()
 
         val retrofitService = retrofit.create(RetrofitService::class.java)
