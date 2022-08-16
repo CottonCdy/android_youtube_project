@@ -1,6 +1,7 @@
 package com.example.youtubeclone
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -69,6 +70,12 @@ class YoutubeListAdapter(
             title = itemView.findViewById(R.id.title)
             thumbnail = itemView.findViewById(R.id.thumbnail)
             content = itemView.findViewById(R.id.content)
+
+            itemView.setOnClickListener {
+                val intent = Intent(context, YoutubeItemActivity::class.java)
+                intent.putExtra("video_url", youtubeItemList.get(adapterPosition).video)
+                context.startActivity(intent)
+            }
         }
     }
 
